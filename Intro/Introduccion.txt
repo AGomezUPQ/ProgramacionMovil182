@@ -1,0 +1,32 @@
+Qué es JS?
+LEnguaje de programación más popular del momento para desarrollo web
+desarrollador web
+    *Fronten developer
+    *Backend developer
+    *Fullstack
+
+Lenguaje para desarrollo movil.
+    *Android
+    *IOS
+
+Desarrollo de aplicaciones de escritorio
+    *Windows
+
+Frameworks JS
+    *Vue
+    *Angular
+    *React
+
+  Qué ECMAScript?
+  Organización sin fines de lucro para estandarizar el desarrollo (European Computer Manufacturers Association)
+  ECMA 334 ---> C#
+  ECMA 404 ---> JSON
+  ECMA 408 ---> Dart
+  ECMA 262
+
+  JavaScript Engine
+    *Ryan Dahl
+        *V8 ---> C++
+        Google Chrome: V8 ---> Servidores, apps de escritorio, apps moviles, videojuegos
+
+        
