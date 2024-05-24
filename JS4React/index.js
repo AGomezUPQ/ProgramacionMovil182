@@ -112,7 +112,7 @@ nombres.forEach(function(nombre) {
  console.log(resultado)
  console.log(nombres)
 
- */
+ 
 
 //Funcion Concatenar: 
 
@@ -122,13 +122,13 @@ console.log(nombres.concat(edades))
 //Spread operatorS
 console.log([...nombres, ...edades])
 
+*/
 
 
 //MODULOS: IMPORT & EXPORT
-/*
+
 import {suma,resta} from "./calculadora.js"
 import * as calculadora from "./calculadora.js"
 
 console.log(suma(4,8))
 console.log(resta(45,8))
-*/
