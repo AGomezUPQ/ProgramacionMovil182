@@ -122,7 +122,7 @@ console.log(nombres.concat(edades))
 //Spread operatorS
 console.log([...nombres, ...edades])
 
-*/
+
 
 
 //MODULOS: IMPORT & EXPORT
@@ -132,3 +132,46 @@ import * as calculadora from "./calculadora.js"
 
 console.log(suma(4,8))
 console.log(resta(45,8))
+
+
+// Ejemplo de promesa
+const ul = document.createElement('ul')
+let datos = fetch('https://jsonplaceholder.typicode.com/users').then(function(response) {
+    console.log("Carga de datos completada")
+    return response.json()
+}).then(function (data) {
+    console.log(data)
+    data.forEach(function (post) {
+    const li =  document.createElement('li')    
+    li.innerHTML = post.name
+    ul.append(li)
+    });
+    document.body.append(ul)
+})
+
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagagenes')
+
+console.log(fetch)
+
+*/
+
+//Ejemplo Async/await
+const ul = document.createElement('ul')
+
+async function cagardatos() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    const datos = await response.json()
+    console.log(datos)
+    datos.forEach(function (post) {
+        const li =  document.createElement('li')    
+        li.innerHTML = post.name
+        ul.append(li)
+        })
+        document.body.append(ul)
+}
+cagardatos()
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagagenes')
