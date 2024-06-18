@@ -1,28 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import React, {useState} from 'react';
-
-//Funcion Fat arrow, regresar un componente
-
-const Texto=({estilo})=>{
-  const [contenido, setContenido] = useState('Hola mundo')
-  const actualizarContenido = ()=>{
-    setContenido('State actualizo este texto')
-  }
-  return(<Text style={[styles.text,estilo]} onPress={actualizarContenido}>{contenido}</Text>)
-}
-
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import React, { useState } from 'react';
 
 export default function App() {
-  return (
+
+  const [text, setText] = useState('valor default')
+  const [submit, setSubmit] = useState('')
+
+  return (    
     <View style={styles.container}>
 
-      <Texto estilo={styles.brown}></Texto>
-      <Texto estilo={styles.orange} contenido></Texto>
-      <Texto estilo={styles.black} contenido></Texto>
+      <Text> Componente TextInput: {submit}</Text>
       
-         
-      <Button title='presioname' color="#000000"> </Button>
+      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
+
+      <Button title='Presioname' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
+      
+      <TouchableOpacity style={styles.botonOpaco}>
+        <Text>Presiona aquí</Text>
+      </TouchableOpacity>
+
+      <TouchableHighlight style={styles.botonResaltado} onPress={()=>alert('Tocaste el botón')}>
+        <Text>Botón resaltado</Text>
+      </TouchableHighlight>
+
+      <TouchableWithoutFeedback onPress={()=>alert('Tocaste el botón')}>
+        <View style={styles.botonResaltado}>
+          <Text>Botón sin feedback</Text>
+        </View>
+      </TouchableWithoutFeedback>
+      
+
       <StatusBar style="auto" />
     </View>
   );
@@ -31,28 +39,29 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //flexDirection:'row',
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
-  text:{
-    color: 'red',
-    fontSize: 25,
-    height: 150,
+  input: {
+    backgroundColor: '#dfd5ed',
+    height: 40,
     width: 150,
+    margin: 10,
+    borderWidth: 2,
+    borderColor: 'gold',
+    padding: 10,
   },
-  brown:{
-    //flex:1,
-    backgroundColor: 'brown',
+  botonOpaco: {
+    backgroundColor: 'yellow',
+    padding: 10,
+    margin: 10,    
   },
-  orange:{
-    //flex:2,
-    backgroundColor: 'orange',
+  botonResaltado: {
+    backgroundColor: 'gold',
+    padding: 10,
+    margin: 10,    
   },
-  black:{
-    //flex:3,
-    backgroundColor: 'black',
-  }
+  
 });
-
