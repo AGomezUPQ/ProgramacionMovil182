@@ -20,7 +20,7 @@ export default function App() {
     <ImageBackground source={require('./assets/fondo.png')} style={styles.container}>
     <View style={styles.container}>
       <View style={styles.form}>
-      <Text><Text style={styles.texto}>Nombre:</Text></Text>
+      <Text style={styles.texto}>Nombre:</Text>
       <TextInput style={styles.input} placeholder='Ingresa tu Nombre' value={nombre} onChangeText={setnombre}/>
       <Text style={styles.texto}>Email:</Text>
       <TextInput style={styles.input} placeholder='Ingresa tu Email' value={email} onChangeText={setemail}/>

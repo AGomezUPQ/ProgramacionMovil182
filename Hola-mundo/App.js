@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -10,6 +10,25 @@ export default function App() {
   return (    
     <View style={styles.container}>
 
+      <ScrollView style={styles.scroll}>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
       <Text> Componente TextInput: {submit}</Text>
       
       <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
@@ -29,9 +48,9 @@ export default function App() {
           <Text>Botón sin feedback</Text>
         </View>
       </TouchableWithoutFeedback>
-      
-
       <StatusBar style="auto" />
+      </ScrollView> 
+
     </View>
   );
 }
@@ -63,5 +82,9 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,    
   },
+  scroll:{
+    width:Dimensions.get('window').width
+    
+  }
   
 });
