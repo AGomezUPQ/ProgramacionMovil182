@@ -1,56 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, ScrollView } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, Text, View, SectionList} from 'react-native';
+//import React, { useState } from 'react';
 
 export default function App() {
-
-  const [text, setText] = useState('valor default')
-  const [submit, setSubmit] = useState('')
-
+  
   return (    
     <View style={styles.container}>
-
-      <ScrollView style={styles.scroll}>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
       
-      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
-
-      <Button title='Presioname' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
-      
-      <TouchableOpacity style={styles.botonOpaco}>
-        <Text>Presiona aquí</Text>
-      </TouchableOpacity>
-
-      <TouchableHighlight style={styles.botonResaltado} onPress={()=>alert('Tocaste el botón')}>
-        <Text>Botón resaltado</Text>
-      </TouchableHighlight>
-
-      <TouchableWithoutFeedback onPress={()=>alert('Tocaste el botón')}>
-        <View style={styles.botonResaltado}>
-          <Text>Botón sin feedback</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <StatusBar style="auto" />
-      </ScrollView> 
-
+    <SectionList 
+      sections={[
+        {title:'Grupo A',
+          data:[
+            {key:1, name:'ivan isay'}, 
+            {key:2, name:'Victor'},] 
+        },
+        {title:'Grupo B',
+          data:[
+            {key:3, name: 'Elias'},
+            {key:4, name: 'Alan'},]
+        },
+        {title:'Grupo C',
+          data:[
+            {key:5, name: 'Pablo'},
+            {key:6, name: 'Lilian'},
+            {key:7, name: 'Juan Luis Mosqueda Orta'},]
+        },
+      ]} 
+      renderItem={({item})=> <Text style={styles.item}> {item.name} </Text>} 
+      renderSectionHeader={({section})=> <Text style={styles.section}> {section.title} </Text>}
+      />
+            <StatusBar style="auto" />
     </View>
   );
 }
@@ -60,9 +39,28 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'strech',
     justifyContent: 'center',
+    paddingTop:40,
   },
+
+  item:{
+    padding:10,
+    fontSize:25,
+    height:50,
+    borderColor:'Brown',
+    borderBottomWidth:1,
+
+  },
+
+  section:{
+    fontSize:30,
+    backgroundColor: 'blue',
+    
+
+
+  },
+  /*
   input: {
     backgroundColor: '#dfd5ed',
     height: 40,
@@ -86,5 +84,5 @@ const styles = StyleSheet.create({
     width:Dimensions.get('window').width
     
   }
-  
+  */
 });

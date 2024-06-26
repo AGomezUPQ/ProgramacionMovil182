@@ -9,11 +9,11 @@ export default function App() {
   const [email, setemail] = useState('')  
   const [password, setpassword] = useState('') 
 
-  const formulario = () => {alert( `Formulario enviado....\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`)};
+  //const formulario = () => {alert( `Formulario enviado....\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`)};
 
   //Para Telefono
 
-  //const formulario = () => {Alert.alert( `Formulario enviado....\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`)};
+  const formulario = () => {Alert.alert( `Formulario enviado....\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`)};
 
   
   return (
