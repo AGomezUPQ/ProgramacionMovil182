@@ -1,34 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SectionList} from 'react-native';
-//import React, { useState } from 'react';
+import { StyleSheet, Text, View, FlatList, ActivityIndicator} from 'react-native';
+import React, { useState, useEffect } from 'react';
 
 export default function App() {
-  
+
+  const [user, setUser] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() =>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response=> response.json())
+    .then(data => {setUser(data), setLoading(false)})
+  },[])
+
+if(loading){
+  return <View style={styles.center}>
+    <ActivityIndicator size='large' color='#0000ff'/>
+    <Text> Cargando.... </Text>
+  </View>
+}
+
   return (    
     <View style={styles.container}>
+
+      <FlatList data={user}
+      renderItem={({item}) => <Text style={styles.item}> {item.username} </Text> }/>
       
-    <SectionList 
-      sections={[
-        {title:'Grupo A',
-          data:[
-            {key:1, name:'ivan isay'}, 
-            {key:2, name:'Victor'},] 
-        },
-        {title:'Grupo B',
-          data:[
-            {key:3, name: 'Elias'},
-            {key:4, name: 'Alan'},]
-        },
-        {title:'Grupo C',
-          data:[
-            {key:5, name: 'Pablo'},
-            {key:6, name: 'Lilian'},
-            {key:7, name: 'Juan Luis Mosqueda Orta'},]
-        },
-      ]} 
-      renderItem={({item})=> <Text style={styles.item}> {item.name} </Text>} 
-      renderSectionHeader={({section})=> <Text style={styles.section}> {section.title} </Text>}
-      />
+    
             <StatusBar style="auto" />
     </View>
   );
@@ -53,12 +51,10 @@ const styles = StyleSheet.create({
 
   },
 
-  section:{
-    fontSize:30,
-    backgroundColor: 'blue',
-    
-
-
+  center:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
   },
   /*
   input: {
