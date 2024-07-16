@@ -48,7 +48,7 @@ const buscarPeli = () => {
         renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
       />
 
-    
+
       <StatusBar style="auto" />
     </View>
     </ImageBackground>

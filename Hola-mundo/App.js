@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, ActivityIndicator} from 'react-native';
+import { StyleSheet, Text, View, FlatList, ActivityIndicator, } from 'react-native';
 import React, { useState, useEffect } from 'react';
+import Prueba from './screens/prueba';
 
 export default function App() {
 
@@ -26,9 +27,15 @@ if(loading){
       <FlatList data={user}
       renderItem={({item}) => <Text style={styles.item}> {item.username} </Text> }/>
       
-    
+      <Prueba />
+
             <StatusBar style="auto" />
+
+            
     </View>
+
+    
+
   );
 }
 

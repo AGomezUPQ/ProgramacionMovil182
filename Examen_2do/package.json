@@ -1,5 +1,5 @@
 {
-  "name": "hola-mundo",
+  "name": "examen_2do",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
@@ -9,19 +9,13 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~3.2.1",
-    "@expo/vector-icons": "^14.0.2",
-    "@gorhom/bottom-sheet": "^4.6.3",
-    "expo": "~51.0.11",
+    "expo": "~51.0.18",
     "expo-status-bar": "~1.12.1",
-    "metro-runtime": "^0.80.9",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.74.2",
-    "react-native-reanimated": "^3.14.0",
+    "react-native": "0.74.3",
     "react-native-web": "~0.19.10",
-    "undefined": "/",
-    "react-native-gesture-handler": "~2.16.1"
+    "react-dom": "18.2.0",
+    "@expo/metro-runtime": "~3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
