@@ -2,6 +2,12 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import React, { useState } from 'react'
 import {View, Text, TouchableOpacity, Dimensions, Modal} from 'react-native'
 
+
+import BottomSheet,{
+    BottomSheetModal,
+    BottomSheetModalProvider,
+} from '@gorhom/bottonm-sheet'
+
 const {width, height} = Dimensions.get("window");
 
 export default function Prueba() {
